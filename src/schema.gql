@@ -1,0 +1,37 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type CreateProductDto {
+  id: ID!
+  title: String!
+  price: Int!
+}
+
+type CreateCarDto {
+  id: ID!
+  model: String!
+  year: Int!
+}
+
+type Query {
+  getAllProducts: [CreateProductDto!]!
+  getOne(id: String!): CreateProductDto!
+  getAllCars: [CreateCarDto!]!
+}
+
+type Mutation {
+  createProduct(input: ProductInput!): CreateProductDto!
+  removeProduct(id: String!): CreateProductDto!
+  createCar(input: CarInput!): CreateCarDto!
+}
+
+input ProductInput {
+  title: String!
+  price: Int!
+}
+
+input CarInput {
+  model: String!
+  year: Int!
+}
